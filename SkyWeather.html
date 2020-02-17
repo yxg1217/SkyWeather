@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>SkyWeather</title>
+	<!-- CSS file -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	
+<!-- 	回车查询：
+			1. 按下回车(v-on .enter)
+			2. 查询数据(axios interface v-model)
+			3. 渲染数据(v-for array that)
+		事件的绑定使用v-on，并且限制案件为回车，通过事件修饰符来约束
+		接口的调用需要通过axios，获取用户的输入通过v-model来实现
+		最终获得的结果是一个列表结构，通过v-for指令结合数组，数组的赋值放在请求成功的回调函数中，this已经不是之前的了，此时我们需要额外的保存一个，that
+		天气是通过接口得到的，接口文档如下：
+		请求地址：http://wthrcdn.etouch.cn/weather_mini
+		请求方法：get
+		请求参数：city
+		响应内容：天气信息 -->
+		<div class="wrap" id="app">
+			<div class="search_form">
+				<h1>SkyWeather</h1>
+				<div class="form_group">
+					<input type="text" class="input_txt" placeholder="Please enter a city">
+					<button class="input_sub">
+						Search
+					</button>
+				</div>
+				<div>
+					<a href="javascript:;">北京</a>
+					<a href="javascript:;">上海</a>
+					<a href="javascript:;">广州</a>
+					<a href="javascript:;">深圳</a>
+				</div>
+			</div>
+			<ul class="weather_list">
+			</ul>
+		</div>
+		
+		<!-- Vue.js:Development environment version with helpful command line warnings-->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<!-- Axios online address provided on the official website -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	
+</body>
+</html>
