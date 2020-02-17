@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Axios Learning</title>
+</head>
+<body>
+	<input type="button" value="get request" class="get">
+	<input type="button" value="post request" class="post">
+	<!-- address of axios -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script>
+		/*
+		interface 1: jokes
+		address: http://autumnfish.cn/api/joke/list
+		methode:get
+		request parametre: num (jokes' number)
+		return: random jokes  
+		*/
+
+		/*
+		axios: axios.get(address?ley=value&key2=value2).then(function(response){},function(err){})
+		get请求：地址是文档提供的接口地址，如果需要查询参数，在地址后面跟上查询字符串，中间用问号分隔，key是文档提供的，value是我们具体的数据。然后then方法内部传递的第一个回调函数，会在请求相应完成的时候触发，第二个回调函数会在请求失败的时候触发；他们的形参可以获得信息，一个是服务器响应内容，一个是错误信息。
+		axios.post(address,{key:value,key2:value2}).then(function(response){},function(err){})
+		不同之处在于，数据是以对象的形式写在我们post方法的第二个参数内部
+		*/
+		document.querySelector(".get").onclick = function () {
+			axios.get("http://autumnfish.cn/api/joke/list?num=3").then(function (response) {
+				console.log(response);
+			},function(err) {
+				console.log(err);
+			})
+		}
+		/*
+		interface 2: user inscription
+		address: http://autumnfish.cn/api/user/reg
+		methode:post
+		request parametre: username
+		return: inscription successfully or not  
+		*/
+		document.querySelector(".post").onclick = function () {
+			axios.post("http://autumnfish.cn/api/user/reg",{username:"BlackCat"}).then(function(response) {
+				console.log(response);
+			},function(err) {
+				console.log(err);
+			})
+
+		}
+
+		/*
+		1，axios必须先导入才可以使用
+		2，使用get或者post方法即可发送对应的请求
+		3，then方法中的回调函数会在请求成功或失败的时候触发
+		4，通过回调函数的形参可以获取响应内容或错误信息
+		*/
+	</script>
+</body>
+</html>
