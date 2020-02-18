@@ -1,0 +1,36 @@
+html {
+	background-color: #ddd;
+}
+
+body {
+	margin: 0;
+}
+
+#app {
+	text-align: center; 
+	background-image: 
+	linear-gradient(#6495ED, #F0F8FF); 
+	height: 500px;
+}
+
+#bottom {
+	height: 40px; 
+	line-height: 40px; 
+	text-align: center; 
+	font-size: 15px; 
+	color: gray;
+}
+
+h1 {
+	font-family: serif; 
+	color: #444;
+}
+
+.form_group {
+	height: 80px
+}
+
+.hot {
+	text-decoration: none;
+	margin: 0 15px;
+}
