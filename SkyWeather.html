@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>SkyWeather</title>
 	<!-- CSS file -->
-	<link rel="stylesheet" href="css/reset.css">
+	<!-- <link rel="stylesheet" href="css/reset.css"> -->
 	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -26,7 +26,8 @@
 			<div class="search_form">
 				<h1 >SkyWeather</h1>
 				<div class="form_group">
-					<input type="text" class="input_txt" placeholder="Please enter a city">
+					<!-- 通过@keyup.enter来限定触发方式是回车，方法名叫searchWeather -->
+					<input type="text" @keyup.enter="searchWeather" class="input_txt" placeholder="Please enter a city"> 
 					<button class="input_sub">
 						Search
 					</button>
@@ -49,6 +50,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<!-- Axios online address provided on the official website -->
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<!-- Our js -->
+		<script src="js/main.js"></script>
 	
 </body>
 </html>
